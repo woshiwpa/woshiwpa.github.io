@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/operators.html">operators</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/function_return_endf.html">function</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/variable.html">variable</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/if_elseif_else_endif.html">if</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/while_loop_do_until_for_next.html">while do for</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/break_continue.html">break continue</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/select_case_default_ends.html">select</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/try_throw_catch_endtry.html">try catch</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/class_endclass.html">class</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/call_endcall.html">call</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/citingspace_using.html">citingspace</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/help_endh_ATlanguage.html">help</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATcompulsory_link.html">@compulsory_link</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATexecution_entry.html">@execution_entry</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATbuild_asset.html">@build_asset</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">MFP编程语言@compulsory_link标注：</h2>
+<p style="font-family:verdana;color:black;">
+</p>
+<p style="font-family:verdana;color:black;">
+当创建一个APK包的时候，可编程科学计算器不是拷贝所有用户自定义的mfps代码文件而仅仅抽取相关的代码。在某些时候，比如调用integrate或者plot_exprs函数时，函数参数是一个字符串或者基于字符串的变量。这样一来，可编程科学计算器在编译的时候无法判断哪些函数在运行时将会被调用。又比如，如果函数的参数是一个对象，该对象的类型在运行前往往无法确定。用户在这种情况下需要在代码中，最好在相关函数调用语句的前一行，增加一个注释指令@complusory_link告知可编程科学计算器哪些用户自定义的函数和类需要链接入APK包。比如
+</p>
+<p style="font-family:verdana;color:black;">
+...
+</p>
+<p style="font-family:verdana;color:black;">
+@compulsory_link get_functions("::abc::myf_expr1", "myf_expr2(2)")
+</p>
+<p style="font-family:verdana;color:black;">
+integrated_result = integrate(expression_str, variable_str)
+</p>
+<p style="font-family:verdana;color:black;">
+@compulsory_link get_classes("::def::hij::my_class1", "::my_class2", "my_class3")
+</p>
+<p style="font-family:verdana;color:black;">
+...
+</p>
+<p style="font-family:verdana;color:black;">
+在上面例子中，::abc::myf_expr1和myf_expr2是用户自定义的函数。它们在运行时将会被integrate函数调用用于计算积分。所有的名字叫做::abc::myf_expr1的函数都会被链接入APK包。但是对于名字叫myf_expr2的函数，当且仅当它是位于一个被使用的引用空间中并且它正好有两个参数或者有可选参数时，该函数才会被链接入APK包。
+</p>
+<p style="font-family:verdana;color:black;">
+类似地，::def::hij::my_class1，::my_class2和my_class3是用户自定义的类。需要注意的是类my_class3不包括完整的引用空间路径，所以compulsory_link语句将会搜索引用空间，找到第一个名字符合my_class3的类，如果存在这个类的话。
+</p>
+<p style="font-family:verdana;color:black;">
+如果用户想把所有自己定义的函数和类链接入APK包，请用如下语句
+</p>
+<p style="font-family:verdana;color:black;">
+@compulsory_link get_all_referred_units()
+</p>
+<p style="font-family:verdana;color:black;">
+。这样一来，可编程科学计算器将链接所有函数和类。但是用户创建的应用装载速度会比较慢。并且，用户还必须保证所有的函数和类都必须已经定义，否则打包时会出现编译错误。
+</p>
+<p style="font-family:verdana;color:black;">
+需要指出的是，get_functions，get_classes和get_all_referred_units实际上都是MFP语言的函数。但是和普通函数不一样的是，这几个函数位于mfp_compiler引用空间中。该引用空间仅仅在打包链接的时候被加载，一般情况下用户不会用到。
+</p>
+<p style="font-family:verdana;color:black;">
+还要注意@compulsory_link指令必须位于一个函数的内部，如果它在function语句前面或者endf语句之后，它不会有任何作用。
+</p>
+</div>
+   
+</body>
+</html>

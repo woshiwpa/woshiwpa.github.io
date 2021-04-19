@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/all.html">所有函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/integer_operation.html">整数操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/logic.html">逻辑函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/statistic_and_stochastic.html">统计和随机函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/trigononmetric.html">三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exponential_and_logarithmic.html">指数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/complex_number.html">复数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/system.html">系统函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/array_or_matrix.html">数组和矩阵函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/graphic.html">绘图函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/expression_and_calculus.html">表达式和微积分函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/string.html">字符串函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/hyperbolic_trigononmetric.html">双曲三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/sorting.html">排序函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/polynomial.html">多项式函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/signal_proc.html">信号处理函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/file.html">文件操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/time_and_date.html">时间和日期函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/gdi.html">显示函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/multimedia.html">多媒体函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/datastruct.html">数据结构函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/platform_hardware.html">平台和硬件函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/parallel.html">并行计算函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/reflection.html">反射函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/mfpcompiler.html">MFP编译函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/others.html">其它函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">可编程科学计算器帮助：信号处理函数</h2>
+<table border="1" style="font-family:times;color:green;">
+<tr>
+<th>函数名</th>
+<th>函数帮助信息</th>
+</tr>
+<tr>
+<td><center>conv</center></td>
+<td><p>::mfp::sig_proc::conv(2) :</p>
+<p>conv(input_a, inputb)返回input_a和input_b的卷积。Input_a和input_b要么都是一维向量，要么都是二维矩阵。当前本函数仅仅支持一维和二维卷积，比如：</p>
+<p>conv([4,8,2,9],[5,3,8,9,6,7,8]) = [20, 52, 66, 151, 139, 166, 181, 132, 79, 72]</p>
+<p>conv([[4,8,2,9],[8,6,7,9],[2,2,8,-4]],[[-5,i,7],[0.6,8,4]]) = [[-20, -40 + 4 * i, 18 + 8 * i, 11 + 2 * i, 14 + 9 * i, 63], [-37.6, 6.8 + 8 * i, 102.2 + 6 * i, 50.4 + 7 * i, 129 + 9 * i, 99], [-5.2, 57.6 + 2 * i, 58.2 + 2 * i, 119.4 + 8 * i, 156 - 4 * i, 8], [1.2, 17.2, 28.8, 69.6, 0, -16]]</p>
+</td>
+</tr>
+<tr>
+<td><center>fft</center></td>
+<td><p>::mfp::sig_proc::fft(1...) :</p>
+<p>FFT(a, ...)返回对一个数值向量作快速傅立叶变换后的值。注意数值向量中数值的个数必须是2的整数次方。如果参数a是一个数值序列，则本函数只可能拥有一个参数，返回值为对序列a[0], a[1], ..., a[N-1]作快速傅立叶变换的返回值。如果参数a仅仅是一个实数或者虚数，则本函数最少包含2个参数，而返回序列a， optional_params[0]， ...， optional_params[number_of_optional_params - 2]， optional_params[number_of_optional_params - 1]快速傅立叶变换后的值。注意返回值总是一个数组。</p>
+<p>函数例子：</p>
+<p>FFT(1, 2, 3, 4)返回[10, -2+2i, -2, -2 - 2i]；</p>
+<p>FFT([1, 2, 3, 4])同样也是返回[10, -2+2i, -2, -2 - 2i]；</p>
+</td>
+</tr>
+<tr>
+<td><center>ifft</center></td>
+<td><p>::mfp::sig_proc::ifft(1...) :</p>
+<p>IFFT(a, ...)返回对一个数值向量作快速傅立叶变换的逆变换后的值。注意数值向量中数值的个数必须是2的整数次方。如果参数a是一个数值序列，则本函数只可能拥有一个参数，返回值为对序列a[0], a[1], ..., a[N-1]作快速傅立叶变换德逆变换的返回值。如果参数a仅仅是一个实数或者虚数，则本函数最少包含2个参数，而返回序列a， optional_params[0]， ...， optional_params[number_of_optional_params - 2]， optional_params[number_of_optional_params - 1]快速傅立叶变换的逆变换后的值。注意返回值总是一个数组。</p>
+<p>函数例子：</p>
+<p>IFFT(10, -2 + 2i, -2, -2 - 2i)返回[1, 2, 3, 4]；</p>
+<p>IFFT([10, -2 + 2i, -2, -2 - 2i])同样也是返回[1, 2, 3, 4]；</p>
+</td>
+</tr>
+</table>
+</div>
+   
+</body>
+</html>

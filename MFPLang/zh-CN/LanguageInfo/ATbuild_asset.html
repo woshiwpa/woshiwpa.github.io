@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/operators.html">operators</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/function_return_endf.html">function</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/variable.html">variable</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/if_elseif_else_endif.html">if</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/while_loop_do_until_for_next.html">while do for</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/break_continue.html">break continue</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/select_case_default_ends.html">select</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/try_throw_catch_endtry.html">try catch</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/class_endclass.html">class</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/call_endcall.html">call</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/citingspace_using.html">citingspace</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/help_endh_ATlanguage.html">help</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATcompulsory_link.html">@compulsory_link</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATexecution_entry.html">@execution_entry</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATbuild_asset.html">@build_asset</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">MFP编程语言@build_asset标注：</h2>
+<p style="font-family:verdana;color:black;">
+</p>
+<p style="font-family:verdana;color:black;">
+当创建一个APK包的时候，@build_asset标注告诉可编程科学计算器哪些资源文件将会被拷贝到新建APP的asset中的一个叫做resource的压缩文件中。比如
+</p>
+<p style="font-family:verdana;color:black;">
+...
+</p>
+<p style="font-family:verdana;color:black;">
+@build_asset copy_to_resource(get_upper_level_path(get_src_file_path()) + "eatfood.wav", "sounds/eatfood.wav")
+</p>
+<p style="font-family:verdana;color:black;">
+if is_mfp_app()
+</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;play_sound_from_zip(get_asset_file_path("resource"), "sounds/eatfood.wav", 1, false)
+</p>
+<p style="font-family:verdana;color:black;">
+else
+</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;play_sound(get_upper_level_path(get_src_file_path()) + "eatfood.wav", false)
+</p>
+<p style="font-family:verdana;color:black;">
+endif
+</p>
+<p style="font-family:verdana;color:black;">
+...
+</p>
+<p style="font-family:verdana;color:black;">
+在上面例子中，资源文件的文件名叫做eatfood.wav。这个资源文件被放在当前正在运行的MFPS脚本文件的所在目录中。这样一来，该资源文件的路径是get_upper_level_path(get_src_file_path()) + "eatfood.wav"。如果不是运行MFP应用，开发者可以调用play_sound函数，根据该资源文件的路径，直接从硬盘或者SD卡中读取该资源文件并演奏。但是，如果是运行的MFP应用，MFPS脚本文件被打包在APK文件中，开发者则必须从APK的asset下的resource.zip文件中加载资源。APK的asset下的resource.zip文件的路径由get_asset_file_path("resource")给出，"sounds/eatfood.wav"代表该资源文件在压缩文件中的位置，1表示安卓asset资源文件，play_sound_from_zip将该资源文件抽取出来并演奏。
+</p>
+<p style="font-family:verdana;color:black;">
+当用户创建APK包时，@build_asset标注所起的作用就是将资源文件从硬盘或者SD卡上拷贝到APK的asset下的resource.zip文件中。copy_to_resource实际上是一个MFP函数。它的第一个参数是资源文件的源路径（也就是在硬盘或SD卡上的路径），第二个参数是目标路径，也就是在resource.zip文件中的位置。和普通函数不一样的是，copy_to_resource函数位于mfp_compiler引用空间中。该引用空间仅仅在打包链接的时候被加载，一般情况下用户不会用到。
+</p>
+<p style="font-family:verdana;color:black;">
+还要注意@build_asset指令必须位于一个函数的内部，如果它在function语句前面或者endf语句之后，它不会有任何作用。
+</p>
+</div>
+   
+</body>
+</html>

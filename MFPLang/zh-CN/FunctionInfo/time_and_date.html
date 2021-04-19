@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/all.html">所有函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/integer_operation.html">整数操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/logic.html">逻辑函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/statistic_and_stochastic.html">统计和随机函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/trigononmetric.html">三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exponential_and_logarithmic.html">指数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/complex_number.html">复数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/system.html">系统函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/array_or_matrix.html">数组和矩阵函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/graphic.html">绘图函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/expression_and_calculus.html">表达式和微积分函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/string.html">字符串函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/hyperbolic_trigononmetric.html">双曲三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/sorting.html">排序函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/polynomial.html">多项式函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/signal_proc.html">信号处理函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/file.html">文件操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/time_and_date.html">时间和日期函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/gdi.html">显示函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/multimedia.html">多媒体函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/datastruct.html">数据结构函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/platform_hardware.html">平台和硬件函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/parallel.html">并行计算函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/reflection.html">反射函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/mfpcompiler.html">MFP编译函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/others.html">其它函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">可编程科学计算器帮助：日期和时间函数</h2>
+<table border="1" style="font-family:times;color:green;">
+<tr>
+<th>函数名</th>
+<th>函数帮助信息</th>
+</tr>
+<tr>
+<td><center>get_day_of_month</center></td>
+<td><p>::mfp::time_date::get_day_of_month(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_day_of_week</center></td>
+<td><p>::mfp::time_date::get_day_of_week(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_day_of_year</center></td>
+<td><p>::mfp::time_date::get_day_of_year(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_hour</center></td>
+<td><p>::mfp::time_date::get_hour(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_millisecond</center></td>
+<td><p>::mfp::time_date::get_millisecond(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_minute</center></td>
+<td><p>::mfp::time_date::get_minute(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_month</center></td>
+<td><p>::mfp::time_date::get_month(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_second</center></td>
+<td><p>::mfp::time_date::get_second(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_time_stamp</center></td>
+<td><p>::mfp::time_date::get_time_stamp(1...) :</p>
+<p>get_time_stamp(string_or_year, ...)返回由其参数所决定的时标。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。这个函数有两种工作模式。第一种模式是get_time_stamp(string_time_stamp)。这种模式仅仅接受一个字符串参数，该参数必须基于yyyy-mm-dd hh:mm:ss[.f...]的格式。其中，秒的分数部分可以忽略。第二种模式是get_time_stamp(year, month, day, hour, minute, second, millisecond)。这些参数中，除了第一个参数year（年），所有的其他参数都可以省略。如果省略，month（月）和day（日）的缺省值是1，hour（小时），minute（分钟），second（秒）和millisecond（毫秒）的缺省值是0。比如get_time_stamp("1981-05-30 17:05:06")返回1981年5月30日17点5分6秒0毫秒的时标，用户也可以调用get_time_stamp(1981, 5, 30, 17, 5, 6, 0)获得同样的结果。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_year</center></td>
+<td><p>::mfp::time_date::get_year(1) :</p>
+<p>get_year(timestamp)，get_month(timestamp)，get_day_of_year(timestamp)，get_day_of_month(timestamp)，get_day_of_week(timestamp)，get_hour(timestamp)，get_minute(timestamp)，get_second(timestamp)和get_millisecond(timestamp) 分别返回时标timestamp所对应的年，月，本年中的第几天，本月中的第几天，本星期中的第几天（礼拜天是第0天，礼拜一是第一天，...），小时，分钟，秒钟和毫秒。时标是时标所表示的时刻和1970年1月1日午夜（UTC）的毫秒数时间差。例如，get_day_of_week(get_time_stamp(2014, 12, 21))返回0，表示2014年12月21日是礼拜天。</p>
+</td>
+</tr>
+<tr>
+<td><center>now</center></td>
+<td><p>::mfp::time_date::now(0) :</p>
+<p>now()返回当前时刻和1970年1月1日午夜（UTC）的毫秒数时间差。</p>
+</td>
+</tr>
+</table>
+</div>
+   
+</body>
+</html>

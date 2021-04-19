@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/all.html">所有函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/integer_operation.html">整数操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/logic.html">逻辑函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/statistic_and_stochastic.html">统计和随机函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/trigononmetric.html">三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exponential_and_logarithmic.html">指数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/complex_number.html">复数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/system.html">系统函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/array_or_matrix.html">数组和矩阵函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/graphic.html">绘图函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/expression_and_calculus.html">表达式和微积分函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/string.html">字符串函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/hyperbolic_trigononmetric.html">双曲三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/sorting.html">排序函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/polynomial.html">多项式函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/signal_proc.html">信号处理函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/file.html">文件操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/time_and_date.html">时间和日期函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/gdi.html">显示函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/multimedia.html">多媒体函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/datastruct.html">数据结构函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/platform_hardware.html">平台和硬件函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/parallel.html">并行计算函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/reflection.html">反射函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/mfpcompiler.html">MFP编译函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/others.html">其它函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">可编程科学计算器帮助：复数操作函数</h2>
+<table border="1" style="font-family:times;color:green;">
+<tr>
+<th>函数名</th>
+<th>函数帮助信息</th>
+</tr>
+<tr>
+<td><center>abs</center></td>
+<td><p>::mfp::math::complex::abs(1) :</p>
+<p>abs(x)返回复数x的模或者实数x的绝对值。</p>
+</td>
+</tr>
+<tr>
+<td><center>angle</center></td>
+<td><p>::mfp::math::complex::angle(1) :</p>
+<p>angle(x)返回复数x基于弧度的幅角值。</p>
+</td>
+</tr>
+<tr>
+<td><center>image</center></td>
+<td><p>::mfp::math::complex::image(1) :</p>
+<p>image(x)返回复数x的虚部的实数值。</p>
+<p>::mfp::math::complex::image(2) :</p>
+<p>image(x, mode)返回复数x的虚部。如果参数mode是true，则返回虚数值，否则返回实数值。比如image(3+2i, true) = 2i而image(3+2i, false) = 2。</p>
+</td>
+</tr>
+<tr>
+<td><center>real</center></td>
+<td><p>::mfp::math::complex::real(1) :</p>
+<p>real(x)返回复数x的实部。</p>
+</td>
+</tr>
+</table>
+</div>
+   
+</body>
+</html>

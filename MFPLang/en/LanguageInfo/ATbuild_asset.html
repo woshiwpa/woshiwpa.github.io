@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>Scientific Calculator Plus Help</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../zh-CN/MFPIndex.html">【中文版】</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">Introduction</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP language introduction</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/operators.html">operators</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/function_return_endf.html">function</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/variable.html">variable</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/if_elseif_else_endif.html">if</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/while_loop_do_until_for_next.html">while do for</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/break_continue.html">break continue</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/select_case_default_ends.html">select</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/try_throw_catch_endtry.html">try catch</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/class_endclass.html">class</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/call_endcall.html">call</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/citingspace_using.html">citingspace</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/help_endh_ATlanguage.html">help</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATcompulsory_link.html">@compulsory_link</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATexecution_entry.html">@execution_entry</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATbuild_asset.html">@build_asset</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP functions</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">build Android APK</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">game programming</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">chart plotting</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">MFP language @build_asset annotation:</h2>
+<p style="font-family:verdana;color:black;">
+</p>
+<p style="font-family:verdana;color:black;">
+When creating an APK package, @build_asset annotation tells Scientific Calculator Plus the resource files to be copied to APK asset. For example 
+</p>
+<p style="font-family:verdana;color:black;">
+...
+</p>
+<p style="font-family:verdana;color:black;">
+@build_asset copy_to_resource(get_upper_level_path(get_src_file_path()) + "eatfood.wav", "sounds/eatfood.wav")
+</p>
+<p style="font-family:verdana;color:black;">
+if is_mfp_app()
+</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;play_sound_from_zip(get_asset_file_path("resource"), "sounds/eatfood.wav", 1, false)
+</p>
+<p style="font-family:verdana;color:black;">
+else
+</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;play_sound(get_upper_level_path(get_src_file_path()) + "eatfood.wav", false)
+</p>
+<p style="font-family:verdana;color:black;">
+endif
+</p>
+<p style="font-family:verdana;color:black;">
+...
+</p>
+<p style="font-family:verdana;color:black;">
+In this example, there is a resource file called eatfood.wav. It is placed in the same folder as the current running mfps source file. In this way, its path is get_upper_level_path(get_src_file_path()) + "eatfood.wav". If not an MFP app, play_sound can be called to play the wave file using this path as a parameter. However, for an MFP app, mfps source is not physically located in an SD card or hard drive but in the APK. As such no way to find resource file using the above technique. However, developer may save resource files in a zip file the app asset. In the above example, the zip file's name is resource.zip (the only supported zip file at this monent) and the entry for the resource is sounds/eatfood.wav. Then play_sound_from_zip has to be called to replace play_sound to play the wave file.
+</p>
+<p style="font-family:verdana;color:black;">
+When user builds up the APK installation package, the @build_asset annotation copies the wave resource file from hard disk or SD card to the zip file in app Asset. copy_to_resource is an MFP function telling software that the target zip file name should be resource.zip. Its second parameter tells Scientfic Calculator Plus where the resource file is located inside the zip file.
+</p>
+<p style="font-family:verdana;color:black;">
+Like @compulsory_link annotation, @build_asset should be located inside the body of the called function. If it is above function statement or below endf statement, it will not take any effect.
+</p>
+</div>
+   
+</body>
+</html>

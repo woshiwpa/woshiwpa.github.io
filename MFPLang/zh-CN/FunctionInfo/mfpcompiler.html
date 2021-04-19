@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/all.html">所有函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/integer_operation.html">整数操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/logic.html">逻辑函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/statistic_and_stochastic.html">统计和随机函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/trigononmetric.html">三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exponential_and_logarithmic.html">指数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/complex_number.html">复数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/system.html">系统函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/array_or_matrix.html">数组和矩阵函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/graphic.html">绘图函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/expression_and_calculus.html">表达式和微积分函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/string.html">字符串函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/hyperbolic_trigononmetric.html">双曲三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/sorting.html">排序函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/polynomial.html">多项式函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/signal_proc.html">信号处理函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/file.html">文件操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/time_and_date.html">时间和日期函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/gdi.html">显示函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/multimedia.html">多媒体函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/datastruct.html">数据结构函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/platform_hardware.html">平台和硬件函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/parallel.html">并行计算函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/reflection.html">反射函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/mfpcompiler.html">MFP编译函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/others.html">其它函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">可编程科学计算器帮助：MFP编译函数</h2>
+<table border="1" style="font-family:times;color:green;">
+<tr>
+<th>函数名</th>
+<th>函数帮助信息</th>
+</tr>
+<tr>
+<td><center>copy_to_resource</center></td>
+<td><p>::mfp_compiler::annotation::build_asset::copy_to_resource(2) :</p>
+<p>copy_to_resource(source_path, destination_path)是一个用于编译的函数，也就是说它在打包脚本生成MFP应用时发挥作用。本函数source_path所指向的目标文件会被函数拷贝到assets目录下的destination_path所指向的文件。这样一来，一个从本脚本生成的MFP应用仍然能够在该应用的assets中找到程序中引用的图像或者声音文件。本函数返回一个包含三个元素的数组，第一个元素是一个字符串包含源文件路径，第二个是基于字符串的资源文件名，第三个是目标路径。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_all_referred_units</center></td>
+<td><p>::mfp_compiler::annotation::compulsory_link::get_all_referred_units(0) :</p>
+<p>get_all_referred_units()是一个用于编译的函数，也就是说它在打包脚本生成MFP应用时发挥作用。本函数返回一个数组，其中包括所有的用户定义的MFP函数和类的引用信息。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_classes</center></td>
+<td><p>::mfp_compiler::annotation::compulsory_link::get_classes(0...) :</p>
+<p>get_classes(...) 是一个用于编译的函数，也就是说它在打包脚本生成MFP应用时发挥作用。本函数返回一个数组，其中包括所有的出现在参数中的MFP类的引用信息。</p>
+</td>
+</tr>
+<tr>
+<td><center>get_functions</center></td>
+<td><p>::mfp_compiler::annotation::compulsory_link::get_functions(0...) :</p>
+<p>get_functions(...) 是一个用于编译的函数，也就是说它在打包脚本生成MFP应用时发挥作用。本函数返回一个数组，其中包括所有的出现在参数中的MFP函数的引用信息。</p>
+</td>
+</tr>
+</table>
+</div>
+   
+</body>
+</html>

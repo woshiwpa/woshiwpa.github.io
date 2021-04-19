@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>Scientific Calculator Plus Help</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../zh-CN/MFPIndex.html">【中文版】</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">Introduction</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP language introduction</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/operators.html">operators</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/function_return_endf.html">function</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/variable.html">variable</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/if_elseif_else_endif.html">if</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/while_loop_do_until_for_next.html">while do for</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/break_continue.html">break continue</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/select_case_default_ends.html">select</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/try_throw_catch_endtry.html">try catch</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/class_endclass.html">class</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/call_endcall.html">call</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/citingspace_using.html">citingspace</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/help_endh_ATlanguage.html">help</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATcompulsory_link.html">@compulsory_link</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATexecution_entry.html">@execution_entry</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATbuild_asset.html">@build_asset</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP functions</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">build Android APK</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">game programming</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">chart plotting</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">MFP language select, case, default, ends statments:</h2>
+<p style="font-family:verdana;color:black;">
+</p>
+<p style="font-family:verdana;color:black;">
+Select, case, default and ends comprise another type of condition block besides if. They should be used like the following example: </p>
+<p style="font-family:verdana;color:black;">
+select expr</p>
+<p style="font-family:verdana;color:black;">
+case value1</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;......</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;break</p>
+<p style="font-family:verdana;color:black;">
+case value2</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;......</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;break </p>
+<p style="font-family:verdana;color:black;">
+......</p>
+<p style="font-family:verdana;color:black;">
+......</p>
+<p style="font-family:verdana;color:black;">
+......</p>
+<p style="font-family:verdana;color:black;">
+default</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;......</p>
+<p style="font-family:verdana;color:black;">
+ends</p>
+<p style="font-family:verdana;color:black;">
+. Note that if there is no break at the end of a block of case, MFP will continue to execute the statements in the following case or default block. </p>
+</div>
+   
+</body>
+</html>

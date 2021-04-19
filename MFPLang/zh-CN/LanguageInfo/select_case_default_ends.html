@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/operators.html">operators</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/function_return_endf.html">function</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/variable.html">variable</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/if_elseif_else_endif.html">if</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/while_loop_do_until_for_next.html">while do for</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/break_continue.html">break continue</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/select_case_default_ends.html">select</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/try_throw_catch_endtry.html">try catch</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/class_endclass.html">class</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/call_endcall.html">call</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/citingspace_using.html">citingspace</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/help_endh_ATlanguage.html">help</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATcompulsory_link.html">@compulsory_link</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATexecution_entry.html">@execution_entry</a></p>
+	<p style="font-size:12px;"><a href="../LanguageInfo/ATbuild_asset.html">@build_asset</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">MFP编程语言select，case，default和ends语句：</h2>
+<p style="font-family:verdana;color:black;">
+</p>
+<p style="font-family:verdana;color:black;">
+Select，case，default和ends构成了MFP中除if之外的另外一种条件程序块。他们的语法如下：</p>
+<p style="font-family:verdana;color:black;">
+select expr</p>
+<p style="font-family:verdana;color:black;">
+case value1</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;......</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;break</p>
+<p style="font-family:verdana;color:black;">
+case value2</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;......</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;break </p>
+<p style="font-family:verdana;color:black;">
+......</p>
+<p style="font-family:verdana;color:black;">
+......</p>
+<p style="font-family:verdana;color:black;">
+......</p>
+<p style="font-family:verdana;color:black;">
+default</p>
+<p style="font-family:verdana;color:black;">
+&nbsp;&nbsp;&nbsp;&nbsp;......</p>
+<p style="font-family:verdana;color:black;">
+ends</p>
+<p style="font-family:verdana;color:black;">
+。注意如果一个case块的结尾没有break语句，MFP将会执行下一个case块或者default块（如果下个条件分支为default）的语句。</p>
+</div>
+   
+</body>
+</html>

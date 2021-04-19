@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>Scientific Calculator Plus Help</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../zh-CN/MFPIndex.html">【中文版】</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">Introduction</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP language introduction</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/all.html">all functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/integer_operation.html">integer operation</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/logic.html">logic functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/statistic_and_stochastic.html">statistic and stochastic</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/trigononmetric.html">trigononmetric functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exponential_and_logarithmic.html">exponential functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/complex_number.html">complex number</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/system.html">system functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/array_or_matrix.html">array or matrix</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/graphic.html">graphic functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/expression_and_calculus.html">expression and calculus</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/string.html">string functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/hyperbolic_trigononmetric.html">hyperbolic trigononmetric</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/sorting.html">sorting functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/polynomial.html">polynomial</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/signal_proc.html">signal processing</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/file.html">file operation</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/time_and_date.html">time and date</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/gdi.html">graphic display</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/multimedia.html">multimedia functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/datastruct.html">data structure</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/platform_hardware.html">platform and hardware</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/parallel.html">parallel computing</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/reflection.html">reflection</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/mfpcompiler.html">MFP compiling</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/others.html">others</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">build Android APK</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">game programming</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">chart plotting</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">Scientific Calculator Plus Help : complex number functions</h2>
+<table border="1" style="font-family:times;color:green;">
+<tr>
+<th>Function name</th>
+<th>Function info</th>
+</tr>
+<tr>
+<td><center>abs</center></td>
+<td><p>::mfp::math::complex::abs(1) :</p>
+<p>abs(x) returns modulus of a complex number or absolute value of a real number.</p>
+</td>
+</tr>
+<tr>
+<td><center>angle</center></td>
+<td><p>::mfp::math::complex::angle(1) :</p>
+<p>angle(x) returns radian based angle of a complex number</p>
+</td>
+</tr>
+<tr>
+<td><center>image</center></td>
+<td><p>::mfp::math::complex::image(1) :</p>
+<p>image(x) returns image part (a real value) of complex value x.</p>
+<p>::mfp::math::complex::image(2) :</p>
+<p>image(x, mode) returns image part of complex value x. If mode is true, returns image value. Otherwise, returns real value. For example, image(3+2i, true) = 2i while image(3+2i, false) = 2.</p>
+</td>
+</tr>
+<tr>
+<td><center>real</center></td>
+<td><p>::mfp::math::complex::real(1) :</p>
+<p>real(x) returns real part of complex value x.</p>
+</td>
+</tr>
+</table>
+</div>
+   
+</body>
+</html>
