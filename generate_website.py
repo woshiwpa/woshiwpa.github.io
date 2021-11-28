@@ -2,6 +2,7 @@
 import os
 import shutil
 
+anMathAssetsFolder = 'D:/Development/AStudioProjs/AnMath/anMath/src/main/assets'
 sourceWebPagesFolder = 'D:/Development/git_repo/MFPLang4JVM/docs'
 destWebPagesFolder = 'D:/Development/git_repo/woshiwpa.github.io/MFPLang'
 
@@ -30,12 +31,12 @@ body {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   /*font-size: 16px;*/
-  color: #818181;
+  color: #f1f111;
   display: block;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #f111f1;
 }
 
 .main {
@@ -101,6 +102,10 @@ class MFPWebSiteNode:
 for lang in ['en', 'zh-CN']:
     if os.path.exists(destWebPagesFolder + '/' + lang + '/'):
         shutil.rmtree(destWebPagesFolder + '/' + lang + '/')
+    shutil.copy(anMathAssetsFolder + '/' + lang + '/whats_new.html', sourceWebPagesFolder + '/' + lang + '/whats_new.html')
+    shutil.copytree(anMathAssetsFolder + '/' + lang + '/FunctionInfo/', sourceWebPagesFolder + '/' + lang + '/FunctionInfo/', dirs_exist_ok=True)
+    shutil.copytree(anMathAssetsFolder + '/' + lang + '/HowtoInfo/', sourceWebPagesFolder + '/' + lang + '/HowtoInfo/', dirs_exist_ok=True)
+    shutil.copytree(anMathAssetsFolder + '/' + lang + '/LanguageInfo/', sourceWebPagesFolder + '/' + lang + '/LanguageInfo/', dirs_exist_ok=True)
     shutil.copytree(sourceWebPagesFolder + '/' + lang + '/', destWebPagesFolder + '/' + lang + '/')
 
     indexName = 'Introduction' if lang != 'zh-CN' else 'MFP语言和可编程科学计算器'
@@ -144,8 +149,10 @@ for lang in ['en', 'zh-CN']:
     displayFunctionsName = 'graphic display' if lang != 'zh-CN' else '显示函数'
     multimediaFunctionsName = 'multimedia functions' if lang != 'zh-CN' else '多媒体函数'
     datastructureFunctionsName = 'data structure' if lang != 'zh-CN' else '数据结构函数'
+    exdataFunctionsName = 'data interchange format' if lang != 'zh-CN' else '数据交换文件格式函数'
     platformFunctionsName = 'platform and hardware' if lang != 'zh-CN' else '平台和硬件函数'
     parallelFunctionsName = 'parallel computing' if lang != 'zh-CN' else '并行计算函数'
+    rtcmmediaFunctionsName = 'RTC multimedia' if lang != 'zh-CN' else 'RTC多媒体函数'
     reflectionFunctionsName = 'reflection' if lang != 'zh-CN' else '反射函数'
     mfpcompilingFunctionsName = 'MFP compiling' if lang != 'zh-CN' else 'MFP编译函数'
     othersFunctionsName = 'others' if lang != 'zh-CN' else '其它函数'
@@ -253,10 +260,14 @@ for lang in ['en', 'zh-CN']:
     allNodes.add(multimediaFunctionsNode)
     datastructureFunctionsNode = MFPWebSiteNode(datastructureFunctionsName, 'FunctionInfo/datastruct.html', functionIndexNode)
     allNodes.add(datastructureFunctionsNode)
+    exdataFunctionsNode = MFPWebSiteNode(exdataFunctionsName, 'FunctionInfo/exdata.html', functionIndexNode)
+    allNodes.add(exdataFunctionsNode)
     platformFunctionsNode = MFPWebSiteNode(platformFunctionsName, 'FunctionInfo/platform_hardware.html', functionIndexNode)
     allNodes.add(platformFunctionsNode)
     parallelFunctionsNode = MFPWebSiteNode(parallelFunctionsName, 'FunctionInfo/parallel.html', functionIndexNode)
     allNodes.add(parallelFunctionsNode)
+    rtcmmediaFunctionsNode = MFPWebSiteNode(rtcmmediaFunctionsName, 'FunctionInfo/rtcmmedia.html', functionIndexNode)
+    allNodes.add(rtcmmediaFunctionsNode)
     reflectionFunctionsNode = MFPWebSiteNode(reflectionFunctionsName, 'FunctionInfo/reflection.html', functionIndexNode)
     allNodes.add(reflectionFunctionsNode)
     mfpcompilingFunctionsNode = MFPWebSiteNode(mfpcompilingFunctionsName, 'FunctionInfo/mfpcompiler.html', functionIndexNode)
@@ -281,7 +292,7 @@ for lang in ['en', 'zh-CN']:
         titleStr = ''
         bodyStrStart = False
         bodyStr = ''
-        with open(sourceWebPagesFolder + '/' + lang + '/' + webpageNode.pageFilePath, 'r') as f:
+        with open(sourceWebPagesFolder + '/' + lang + '/' + webpageNode.pageFilePath, 'r', encoding="utf-8") as f:
             for line in f:
                 lineNoBlank = line.lstrip().lower()
                 # For each line, check if line contains the string
@@ -296,7 +307,7 @@ for lang in ['en', 'zh-CN']:
                         bodyStr += line
                 
         fullTextStr = styleStr + titleStr + sideBarStr.replace('<a href="', '<a href="' + webpageNode.upperLevelStr) + bodyStr + endOfFileStr
-        with open(destWebPagesFolder + '/' + lang + '/' + webpageNode.pageFilePath, 'w') as f:
+        with open(destWebPagesFolder + '/' + lang + '/' + webpageNode.pageFilePath, 'w', encoding="utf-8") as f:
             f.write(fullTextStr)
             
             

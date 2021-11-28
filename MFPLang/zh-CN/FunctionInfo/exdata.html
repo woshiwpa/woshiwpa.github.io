@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #f1f111;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f111f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>可编程科学计算器帮助</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/all.html">所有函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/integer_operation.html">整数操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/logic.html">逻辑函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/statistic_and_stochastic.html">统计和随机函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/trigononmetric.html">三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exponential_and_logarithmic.html">指数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/complex_number.html">复数函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/system.html">系统函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/array_or_matrix.html">数组和矩阵函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/graphic.html">绘图函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/expression_and_calculus.html">表达式和微积分函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/string.html">字符串函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/hyperbolic_trigononmetric.html">双曲三角函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/sorting.html">排序函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/polynomial.html">多项式函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/signal_proc.html">信号处理函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/file.html">文件操作函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/time_and_date.html">时间和日期函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/gdi.html">显示函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/multimedia.html">多媒体函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/datastruct.html">数据结构函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exdata.html">数据交换文件格式函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/platform_hardware.html">平台和硬件函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/parallel.html">并行计算函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/rtcmmedia.html">RTC多媒体函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/reflection.html">反射函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/mfpcompiler.html">MFP编译函数</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/others.html">其它函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">可编程科学计算器帮助：数据交换文件格式函数</h2>
+<table border="1" style="font-family:times;color:green;">
+<tr>
+<th>函数名</th>
+<th>函数帮助信息</th>
+</tr>
+<tr>
+<td><center>get_json_field</center></td>
+<td><p>::mfp::exdata::json::get_json_field(3) :</p>
+<p>此函数从一个代表JSON数据的字符串中获取一个域的值。此函数有三个参数。第一个参数为一个代表JSON数据的字符串，第二个参数为JSON域的名字，第三个参数为JSON域的类型。如果第三个参数值为"s"，则意味着这个JSON域是一个字符串，如果是"b"，则意味着这个JSON域是一个布尔值，如果是"f"，则意味着这个JSON域是一个浮点数值，如果是"d"，则意味着这个JSON域是一个整数值，如果是"a"，则意味着这个JSON域是一个数组，如果是"j"，则意味着这个JSON域是一个代表JSON数据的字符串，如果是其他值或者这个参数被省略，则由MFP自己侦测这个JSON域的数据类型。注意第一个参数和第二个参数都是区分大小写的，但第三个参数不区分大小写。这个函数的返回值是这个JSON域的数据值。本函数的一个例子是get_json_field("{\"ABC\": null, \"JJJ\": {\"DEF\":[1, 8, [\"Welcome\", 9.99]],\"ZZ\":\"hello boy\"}}", "JJJ", "j")。</p>
+</td>
+</tr>
+<tr>
+<td><center>set_json_field</center></td>
+<td><p>::mfp::exdata::json::set_json_field(3) :</p>
+<p>此函数将一个值设置到代表JSON数据的字符串中。此函数有三个参数。第一个参数为一个代表JSON数据的字符串，第二个参数为JSON域的名字，第三个参数为JSON域的值。注意这三个参数都是区分大小写的。如果这个JSON域已经存在，则将新值写入，否则，将创建一个新的JSON域。这个函数的返回值是设置后的新的JSON域的字符串，或者如果数据类型不支持或JSON域的名字错误则抛出异常。本函数的一个例子是set_json_field("{\"ABC\": null, \"JJJ\": {\"DEF\":[1, 8, [\"Welcome\", 9.99]],\"ZZ\":\"hello boy\"}}", "JJJ", "New value")。</p>
+</td>
+</tr>
+</table>
+</div>
+   
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #f1f111;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f111f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<title>Scientific Calculator Plus Help</title>
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../zh-CN/MFPIndex.html">【中文版】</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">Introduction</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP language introduction</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/all.html">all functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/integer_operation.html">integer operation</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/logic.html">logic functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/statistic_and_stochastic.html">statistic and stochastic</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/trigononmetric.html">trigononmetric functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exponential_and_logarithmic.html">exponential functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/complex_number.html">complex number</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/system.html">system functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/array_or_matrix.html">array or matrix</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/graphic.html">graphic functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/expression_and_calculus.html">expression and calculus</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/string.html">string functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/hyperbolic_trigononmetric.html">hyperbolic trigononmetric</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/sorting.html">sorting functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/polynomial.html">polynomial</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/signal_proc.html">signal processing</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/file.html">file operation</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/time_and_date.html">time and date</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/gdi.html">graphic display</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/multimedia.html">multimedia functions</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/datastruct.html">data structure</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/exdata.html">data interchange format</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/platform_hardware.html">platform and hardware</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/parallel.html">parallel computing</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/rtcmmedia.html">RTC multimedia</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/reflection.html">reflection</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/mfpcompiler.html">MFP compiling</a></p>
+	<p style="font-size:12px;"><a href="../FunctionInfo/others.html">others</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">build Android APK</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">game programming</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">chart plotting</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
+<h2 style="color:blue">Scientific Calculator Plus Help : data interchange format functions</h2>
+<table border="1" style="font-family:times;color:green;">
+<tr>
+<th>Function name</th>
+<th>Function info</th>
+</tr>
+<tr>
+<td><center>get_json_field</center></td>
+<td><p>::mfp::exdata::json::get_json_field(3) :</p>
+<p>This function gets a field value from a JSON string. It has three parameters. The first parameter is the JSON string. The second parameter is the field name. The third parameter is the field type. "s" means the field is a string, "b" means it is a boolean, "f" means it is float value, "d" means it is an integer, "a" means it is an array, "j" means it is a JSON string and other values or ignored means let MFP detect the type of the field. Note that JSON string and field name are both case sensitive while field type, if it is a string, is case insensative. It returns the field value. An example of this function is get_json_field("{\"ABC\": null, \"JJJ\": {\"DEF\":[1, 8, [\"Welcome\", 9.99]],\"ZZ\":\"hello boy\"}}", "JJJ", "j").</p>
+</td>
+</tr>
+<tr>
+<td><center>set_json_field</center></td>
+<td><p>::mfp::exdata::json::set_json_field(3) :</p>
+<p>This function sets a field value to a JSON string and returns the new JSON string. It has three parameters. The first parameter is the original JSON string. The second parameter is the field name. The third parameter is the field value. Note that all parameters are case-sensative. If the field name exists, this function refreshes the field's value. Otherwise, it adds a new field into the JSON string. It returns the new JSON string or throws an exception if the setting fails because of invalid field name or unsupported field value type. An example of this function is set_json_field("{\"ABC\": null, \"JJJ\": {\"DEF\":[1, 8, [\"Welcome\", 9.99]],\"ZZ\":\"hello boy\"}}", "JJJ", "New value").</p>
+</td>
+</tr>
+</table>
+</div>
+   
+</body>
+</html>
