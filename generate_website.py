@@ -157,6 +157,7 @@ for lang in ['en', 'zh-CN']:
     mfpcompilingFunctionsName = 'MFP compiling' if lang != 'zh-CN' else 'MFP编译函数'
     othersFunctionsName = 'others' if lang != 'zh-CN' else '其它函数'
 
+    useMFPAnLibTopicName = 'call MFP in your app' if lang != 'zh-CN' else '在您的应用中调用MFP'
     buildAPKTopicName = 'build Android APK' if lang != 'zh-CN' else '创建安卓安装包'
 
     gameTopicName = 'game programming' if lang != 'zh-CN' else '小游戏的开发'
@@ -180,6 +181,8 @@ for lang in ['en', 'zh-CN']:
     allNodes.add(languageNode)
     functionIndexNode = MFPWebSiteNode(functionIndexName, 'FunctionInfo/functions.html', websiteRootNode)
     allNodes.add(functionIndexNode)
+    useMFPAnLibTopicNode = MFPWebSiteNode(useMFPAnLibTopicName, 'HowtoInfo/use_mfp_android_lib.html', websiteRootNode)
+    allNodes.add(useMFPAnLibTopicNode)
     buildAPKTopicNode = MFPWebSiteNode(buildAPKTopicName, 'HowtoInfo/build_apk.html', websiteRootNode)
     allNodes.add(buildAPKTopicNode)
     gameTopicNode = MFPWebSiteNode(gameTopicName, 'GameProgramming/index.html', websiteRootNode)
