@@ -1,8 +1,64 @@
+<!DOCTYPE html>
 <html>
-	<head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #f1f111;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f111f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
 		<title>Scientific Calculator Plus Help</title>
-	</head>
-	<body style="background-color:white;">
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../zh-CN/MFPIndex.html">【中文版】</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">Introduction</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP language introduction</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP functions</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/deploy_user_functions.html">deploy user functions</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/use_mfp_android_lib.html">call MFP in your app</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">build Android APK</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">game programming</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">chart plotting</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
 		<h2 style="color:blue">Scientific Calculator Plus Help : Deploy user defined functions</h2>
 		
 		<p style="font-family:verdana;color:black;">
@@ -73,5 +129,7 @@ Endf
 		<p style="font-family:verdana;color:black;">
 		4. Some mobiles, e.g. Sumsang Galaxy Express, do not allow user to create a new file from SD card or phone's internal storage after the phone is connected to PC. This prevents virus to transfer from phone to PC or vice versa and ensures the security of both phone and PC. However, this feature makes some small troubles when user wants to create his/her own functions. A work around is to copy the whole AnMath folder to a read-write enabled folder in PC, add new .mfps files there and debug them using JAVA based Scientific Calculator Plus there. Then copy the whole AnMath folder back and replace the old AnMath folder in SD Card.
 		</p>
-	</body>
+</div>
+   
+</body>
 </html>

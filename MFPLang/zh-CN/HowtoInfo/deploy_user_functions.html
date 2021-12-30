@@ -1,8 +1,64 @@
-﻿<html>
-	<head>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  /*font-size: 16px;*/
+  color: #f1f111;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f111f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  /*font-size: 28px;  Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
 		<title>可编程科学计算器帮助</title>
-	</head>
-	<body style="background-color:white;">
+</head>
+<body>
+
+<div class="sidenav">
+<p style="font-size:18px;"><a href="../../en/MFPIndex.html">[English Version]</a></p>
+	<p style="font-size:18px;"><a href="../MFPIndex.html">MFP语言和可编程科学计算器</a></p>
+	<p style="font-size:15px;"><a href="../LanguageInfo/language.html">MFP语言简介</a></p>
+	<p style="font-size:15px;"><a href="../FunctionInfo/functions.html">MFP函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/deploy_user_functions.html">部署用户自定义函数</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/use_mfp_android_lib.html">在您的应用中调用MFP</a></p>
+	<p style="font-size:15px;"><a href="../HowtoInfo/build_apk.html">创建安卓安装包</a></p>
+	<p style="font-size:15px;"><a href="../GameProgramming/index.html">小游戏的开发</a></p>
+	<p style="font-size:15px;"><a href="../ChartPlotting/index.html">绘制图形</a></p>
+<p/><p/><p/></div>
+
+<div class="main">
 		<h2 style="color:blue">可编程科学计算器帮助：如何部署用户自定义的函数</h2>
 		
 		<p style="font-family:verdana;color:black;">
@@ -73,5 +129,7 @@ Endf
 		<p style="font-family:verdana;color:black;">
 		4. 一些安卓设备，比如三星Galaxy Express，在连接到个人电脑上后，不允许用户从个人电脑上直接在手机存储卡文件夹中创建新的文件。这个限制能够防止病毒在个人电脑和手机之间传播，但是，它也给用户创建自定义函数程序的时候造成了一些小的麻烦。一个解决办法是，把位于手机存储卡中的AnMath目录整个拷贝到个人电脑的一个可读写的位置，在那里创建新的.mfps函数程序文件，并且在那里启动基于JAVA的可编程科学计算器以调式编写的代码。调试完成后，再将AnMath文件夹整个拷贝到手机存储卡中的原来位子以覆盖原来的AnMath目录。
 		</p>
-	</body>
+</div>
+   
+</body>
 </html>
