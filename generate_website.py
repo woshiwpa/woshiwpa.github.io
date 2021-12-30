@@ -168,8 +168,8 @@ for lang in ['en', 'zh-CN']:
     multiplayerTopicName = 'multiple device/player game' if lang != 'zh-CN' else '多设备多玩家游戏'
 
     chartingTopicName = 'chart plotting' if lang != 'zh-CN' else '绘制图形'
-    #chartfunctionsTopicName = 'chart plotting functions' if lang != 'zh-CN' else '使用绘图函数'
-    #charttoolsTopicName = 'chart plotting tools' if lang != 'zh-CN' else '使用绘图工具'
+    chartfunctionsTopicName = 'chart plotting functions' if lang != 'zh-CN' else '使用绘图函数'
+    charttoolsTopicName = 'chart plotting tools' if lang != 'zh-CN' else '使用绘图工具'
 
 
 
@@ -288,6 +288,11 @@ for lang in ['en', 'zh-CN']:
     allNodes.add(rabbitjumpingTopicNode)
     multiplayerTopicNode = MFPWebSiteNode(multiplayerTopicName, 'GameProgramming/multi_player_hungry_snake.html', gameTopicNode)
     allNodes.add(multiplayerTopicNode)
+
+    chartfunctionsTopicNode = MFPWebSiteNode(chartfunctionsTopicName, 'ChartPlotting/MFP_graphing_functions.html', chartingTopicNode)
+    allNodes.add(chartfunctionsTopicNode)
+    charttoolsTopicNode = MFPWebSiteNode(charttoolsTopicName, 'ChartPlotting/SCP_chart_plotting.html', chartingTopicNode)
+    allNodes.add(charttoolsTopicNode)
 
     for webpageNode in allNodes:
         sideBarStr = '</head>\n<body>\n\n<div class="sidenav">\n'+ MFPWebSiteNode.outputSideBar(webpageNode, lang) + '</div>\n\n<div class="main">\n'
