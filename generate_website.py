@@ -207,7 +207,7 @@ for lang in ['en', 'zh-CN']:
     allNodes.add(numberStrArrayTopicNode)
     timeDateSysTopicNode = MFPWebSiteNode(timeDateSysTopicName, 'TimeDateSysFuncs/time_date_sys_functions.html', websiteRootNode)
     allNodes.add(timeDateSysTopicNode)
-    scpIntroTopicNode = MFPWebSiteNode(scpIntroTopicName, 'SCPIntro/tutorial_4_scp_users.html', websiteRootNode)
+    scpIntroTopicNode = MFPWebSiteNode(scpIntroTopicName, 'SCPIntro/index.html', websiteRootNode)
     allNodes.add(scpIntroTopicNode)
 
     operatorsNode = MFPWebSiteNode(operatorsName, 'LanguageInfo/operators.html', languageNode)
