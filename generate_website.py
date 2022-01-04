@@ -163,6 +163,8 @@ for lang in ['en', 'zh-CN']:
 
     gameTopicName = 'game programming' if lang != 'zh-CN' else '小游戏的开发'
     gameFundamentalTopicName = 'game fundametnal' if lang != 'zh-CN' else '小游戏基础'
+    processImgSndTopicName = 'process image/sound' if lang != 'zh-CN' else '处理图像和声音'
+    drawTextTopicName = 'draw text' if lang != 'zh-CN' else '绘制文字'
     hungrysnakeTopicName = 'a hungry snake game' if lang != 'zh-CN' else '一个贪吃蛇游戏'
     gemcrushTopicName = 'a gem crush game' if lang != 'zh-CN' else '一个销宝石游戏'
     rabbitjumpingTopicName = 'a rabbit jumping game' if lang != 'zh-CN' else '一个超级小白兔游戏'
@@ -172,7 +174,12 @@ for lang in ['en', 'zh-CN']:
     chartfunctionsTopicName = 'chart plotting functions' if lang != 'zh-CN' else '使用绘图函数'
     charttoolsTopicName = 'chart plotting tools' if lang != 'zh-CN' else '使用绘图工具'
 
+    mathFunctionsTopicName = 'MFP math analysis' if lang != 'zh-CN' else '使用MFP进行数学分析'
+    fileOperationTopicName = 'MFP file procession' if lang != 'zh-CN' else '使用MFP处理文件'
+    numberStrArrayTopicName = 'number string and array' if lang != 'zh-CN' else '数，字符串和数组'
+    timeDateSysTopicName = 'time date and system' if lang != 'zh-CN' else '日期时间和系统相关'
 
+    scpIntroTopicName = 'Introduction of SCP' if lang != 'zh-CN' else '可编程科学计算器介绍'
 
     # Now build side bar list. Note that the address is always forward slash
     allNodes = set()
@@ -192,6 +199,16 @@ for lang in ['en', 'zh-CN']:
     allNodes.add(gameTopicNode)
     chartingTopicNode = MFPWebSiteNode(chartingTopicName, 'ChartPlotting/index.html', websiteRootNode)
     allNodes.add(chartingTopicNode)
+    mathFunctionsTopicNode = MFPWebSiteNode(mathFunctionsTopicName, 'MathFunctions/math_functions.html', websiteRootNode)
+    allNodes.add(mathFunctionsTopicNode)
+    fileOperationTopicNode = MFPWebSiteNode(fileOperationTopicName, 'FileOperation/file_operation.html', websiteRootNode)
+    allNodes.add(fileOperationTopicNode)
+    numberStrArrayTopicNode = MFPWebSiteNode(numberStrArrayTopicName, 'NumberStrArray/number_str_array.html', websiteRootNode)
+    allNodes.add(numberStrArrayTopicNode)
+    timeDateSysTopicNode = MFPWebSiteNode(timeDateSysTopicName, 'TimeDateSysFuncs/time_date_sys_functions.html', websiteRootNode)
+    allNodes.add(timeDateSysTopicNode)
+    scpIntroTopicNode = MFPWebSiteNode(scpIntroTopicName, 'SCPIntro/tutorial_4_scp_users.html', websiteRootNode)
+    allNodes.add(scpIntroTopicNode)
 
     operatorsNode = MFPWebSiteNode(operatorsName, 'LanguageInfo/operators.html', languageNode)
     allNodes.add(operatorsNode)
@@ -283,6 +300,10 @@ for lang in ['en', 'zh-CN']:
 
     gameFundamentalTopicNode = MFPWebSiteNode(gameFundamentalTopicName, 'GameProgramming/game_fundamental.html', gameTopicNode)
     allNodes.add(gameFundamentalTopicNode)
+    processImgSndTopicNode = MFPWebSiteNode(processImgSndTopicName, 'GameProgramming/process_img_sound.html', gameTopicNode)
+    allNodes.add(processImgSndTopicNode)
+    drawTextTopicNode = MFPWebSiteNode(drawTextTopicName, 'GameProgramming/draw_text.html', gameTopicNode)
+    allNodes.add(drawTextTopicNode)
     hungrysnakeTopicNode = MFPWebSiteNode(hungrysnakeTopicName, 'GameProgramming/hungry_snake.html', gameTopicNode)
     allNodes.add(hungrysnakeTopicNode)
     gemcrushTopicNode = MFPWebSiteNode(gemcrushTopicName, 'GameProgramming/gem_gem.html', gameTopicNode)
